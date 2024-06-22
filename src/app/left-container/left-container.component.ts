@@ -5,6 +5,7 @@ import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { faCloudRain } from '@fortawesome/free-solid-svg-icons';
 import { WeatherService } from '../Services/weather.service';
 
+
 @Component({
   selector: 'app-left-container',
   templateUrl: './left-container.component.html',

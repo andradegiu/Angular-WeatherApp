@@ -4,6 +4,7 @@
         <div class="search-input"><input type="text" placeholder="Buscar..." #location (keyup.Enter)="onSearch(location.value)"></div>
         <div class="location-icon" (click)="onSearch(location.value)"><fa-icon class="fa-xs" [icon]="faLocation"></fa-icon></div>
     </div>
+    
     <div class="left-container-data-box">
         <div class="left-container-temp-data">
             <div class="left-container-temp-img"><img src={{this.weatherService.temperatureData.summaryImage}} alt="summaryImage"></div>

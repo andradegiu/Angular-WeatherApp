@@ -1,5 +1,5 @@
 
-/* Outer Container for right container */
+
 .right-container{
     width: 100%;
     height: 100%;
@@ -7,7 +7,7 @@
     flex-direction: column;
 }
 
-/* CSS For nav bar */
+
 .right-container-nav-bar{
     flex: 2;
     display: flex;
@@ -18,7 +18,7 @@
     font-weight: bold;
 }
 
-/* CSS for nav bar tabs names */
+
 .nav-bar-tabs{
     display: flex;
     flex-direction: row;
@@ -27,7 +27,7 @@
 }
 
 
-/* CSS for Today tab and for hover and for active */
+
 .today{
     margin-right: 15px ;
     color: #c5c5c5;

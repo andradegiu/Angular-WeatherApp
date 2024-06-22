@@ -5,6 +5,7 @@ import { LeftContainerComponent } from './left-container.component';
 describe('LeftContainerComponent', () => {
   let component: LeftContainerComponent;
   let fixture: ComponentFixture<LeftContainerComponent>;
+  
 
   beforeEach(() => {
     TestBed.configureTestingModule({

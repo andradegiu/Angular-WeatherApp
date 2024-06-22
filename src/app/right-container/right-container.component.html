@@ -9,6 +9,7 @@
             <div class="fahrenheit" (click)="onFahrenheitClick()" [className]="this.weatherService.fahrenheit == true?'fahrenheit fahrenheit-active':'fahrenheit'">°F</div>
         </div>
     </div>
+    
     <div class="right-container-data-box">
         <div class="right-container-week-cards" *ngIf="this.weatherService.week == true">
             <div class="card" *ngFor="let card of weatherService.weekData">

@@ -1,4 +1,5 @@
 export class TemperatureData{
+
     temperature:number;
     summaryImage:string;
     day:string;
@@ -6,4 +7,5 @@ export class TemperatureData{
     summaryPhrase:string;
     rainPercent:number;
     location:string;
+    
 }

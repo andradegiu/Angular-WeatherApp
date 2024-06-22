@@ -13,7 +13,6 @@ import { WeatherService } from '../Services/weather.service';
 export class RightContainerComponent {
 
   constructor(public weatherService: WeatherService){};
-
   faThumbsUp:any = faThumbsUp;
   faThumbsDown:any = faThumbsDown;
   faFaceSmile:any = faFaceSmile;

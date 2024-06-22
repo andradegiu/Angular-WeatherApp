@@ -17,7 +17,6 @@ export class WeatherService {
   locationDetails?: LocationDetails;
   weatherDetails?: WeatherDetails;
   temperatureData: TemperatureData ;
-
   todayData?: TodayData[] = [];
   weekData?: WeekData[] = [];
   todaysHighlight?:TodaysHighlight;

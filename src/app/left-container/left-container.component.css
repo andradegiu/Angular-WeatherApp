@@ -5,8 +5,6 @@
   flex-direction: column;
 }
 
-/* CSS for left container nav bar */
-
 .left-container-nav-bar {
   flex: 2;
   display: flex;
@@ -99,7 +97,6 @@
   margin-bottom: 20px;
 }
 
-/* Temperature Details: Summary Phrase, Rain Value, Location Image and Location Details */
 .left-container-other-details{
   flex: 1;
   display: flex;
