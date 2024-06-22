@@ -11,15 +11,8 @@ import { WeatherService } from '../Services/weather.service';
   styleUrls: ['./left-container.component.css']
 })
 export class LeftContainerComponent {
-
-  // variables for font awesome icons
-  
-  
-  //Variables for left-nav-bar search icons
   faMagnifyingGlass:any = faMagnifyingGlass;
   faLocation:any = faLocation
-
-  // Variables for temperature summary
   faCloud:any = faCloud;
   faCloudRain:any = faCloudRain;
   

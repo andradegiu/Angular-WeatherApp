@@ -14,31 +14,20 @@ import { EnvironmentalVariables } from '../Environment/EnvironmentVariables';
 })
 export class WeatherService {
 
-  //Variables which will be filled by API Endpoints
   locationDetails?: LocationDetails;
   weatherDetails?: WeatherDetails;
+  temperatureData: TemperatureData ;
 
-  //Variables that have the extracted data from the API Endpoint Variables
-  temperatureData: TemperatureData ;//Left-Container Data
-  
-  todayData?: TodayData[] = [];//Right-Container Data
-  weekData?: WeekData[] = [];//Right-Container Data
-  todaysHighlight?:TodaysHighlight;//Right-Container Data
-
-  //variables to be used for API calls
-  cityName:string = 'Mumbai';
-  language:string = 'en-US';
+  todayData?: TodayData[] = [];
+  weekData?: WeekData[] = [];
+  todaysHighlight?:TodaysHighlight;
+  cityName:string = 'São Paulo';
+  language:string = 'pt-BR';
   date:string = '20200622';
   units:string = 'm';
-
-  //Variable holding current Time;
   currentTime:Date;
-
-  // variables to control tabs
   today:boolean = false;
   week:boolean = true;
-
-  //variables to control metric value
   celsius:boolean = true;
   fahrenheit:boolean = false;
 
@@ -48,10 +37,7 @@ export class WeatherService {
   }
 
   getSummaryImage(summary:string):string{
-    //Base folder Address containing the images
     var baseAddress = 'assets/';
-
-    //respective image names
     var cloudySunny = 'cloudyandsunny.png';
     var rainSunny = 'rainyandsunny.png';
     var windy = 'windy.png';
@@ -68,8 +54,6 @@ export class WeatherService {
     return baseAddress + cloudySunny;
   }
 
-
-  //Method to create a chunk for left container using model TemperatureData
   fillTemperatureDataModel(){
     this.currentTime = new Date();
     this.temperatureData.day = this.weatherDetails['v3-wx-observations-current'].dayOfWeek;
@@ -81,7 +65,6 @@ export class WeatherService {
     this.temperatureData.summaryImage = this.getSummaryImage(this.temperatureData.summaryPhrase);
   }
 
-  //Method to create a chunk for right container using model WeekData
   fillWeekData(){
     var weekCount =0;
 
@@ -109,7 +92,7 @@ export class WeatherService {
   getTimeFromString(localTime:string){
     return localTime.slice(11,16);
   }
-  //Method to get today's highlight data from the base variable
+
   fillTodaysHighlight(){
     this.todaysHighlight.airQuality = this.weatherDetails['v3-wx-globalAirQuality'].globalairquality.airQualityIndex;
     this.todaysHighlight.humidity = this.weatherDetails['v3-wx-observations-current'].relativeHumidity;
@@ -120,9 +103,7 @@ export class WeatherService {
     this.todaysHighlight.windStatus = this.weatherDetails['v3-wx-observations-current'].windSpeed;
   }
 
-  //Method to create useful data chunks for UI using the data received from the API
   prepareData():void{
-    //Setting Left Container Data Model Properties
     this.fillTemperatureDataModel();
     this.fillWeekData();
     this.fillTodayData();
@@ -141,7 +122,6 @@ export class WeatherService {
     return +((fahrenheit - 32) * 0.555).toFixed(2);
   }
 
-  //Method to get location Details from the API using the variable cityName as the Input.
   getLocationDetails(cityName:string, language:string):Observable<LocationDetails>{
     return this.httpClient.get<LocationDetails>(EnvironmentalVariables.weatherApiLocationBaseURL,{
       headers: new HttpHeaders()
@@ -181,7 +161,6 @@ export class WeatherService {
         latitude = this.locationDetails?.location.latitude[0];
         longitude = this.locationDetails?.location.longitude[0];
 
-        //Once  we get the values for latitude and logitude we can call for the getWeatherReport method.
         this.getWeatherReport(this.date,latitude,longitude,this.language,this.units).subscribe({
           next:(response)=>{
             this.weatherDetails = response;

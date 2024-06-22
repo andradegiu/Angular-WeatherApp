@@ -45,8 +45,6 @@
     background-color: #f6f6f8;
     border-radius: 500px;
 }
-/* ======================================================================================== */
-/* CSS for left container data */
 
 .left-container-data-box {
   flex: 12;
@@ -56,7 +54,6 @@
   flex-direction: column;
 }
 
-/* Temperature Data: Image, Value and Day-Time */
 .left-container-temp-data{
   flex: 1;
   display: flex;
